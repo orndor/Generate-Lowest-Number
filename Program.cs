@@ -24,11 +24,8 @@ namespace FindLowestNumber
             for (int i = 0; i < iterator; i++)
             {
                 var tempList = listOfInts.Take(listOfInts.Count - (iterator - 1 - i));
-                var lowestUsableNum = tempList.Min();
-                var indexOfLowestUsableNum = listOfInts.IndexOf(tempList.Min());
-
-                listOfInts.RemoveRange(0, indexOfLowestUsableNum + 1);
-                outputString += lowestUsableNum;
+                outputString += tempList.Min();
+                listOfInts.RemoveRange(0, listOfInts.IndexOf(tempList.Min()) + 1);
             }
 
             return outputString;

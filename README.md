@@ -16,5 +16,5 @@ For example, if number is “4205123” and n is 4, the lowest possible number t
 
 The solution is contained in the Program.cs file with the following notes:
 
-1. My primary effort in this solution was to do this in as little code as possible.  This was accomplished in 37 lines of code; albeit without the use of LINQ, this would be a fair bit longer.
+1. My primary effort in this solution was to do this in as little code as possible.  This was accomplished in 34 lines of code; albeit without the use of LINQ, this would be a fair bit longer.
 2. Because of point number 1, this code does not perform error checking on user input data (i.e. the user could input a string of characters (instead of numbers), and the program would explode.)
