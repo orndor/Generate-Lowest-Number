@@ -18,14 +18,15 @@ namespace FindLowestNumber
         public static string GenerateLowestNumber(string number, int n)
         {
             var listOfInts = number.Select(numbers => int.Parse(numbers.ToString())).ToList();
-            var iterator = listOfInts.Count - n;
+            var numbersOfListPositionsToExclude = listOfInts.Count - n;
             var outputString = "The lowest number which can be created is: ";
 
-            for (int i = 0; i < iterator; i++)
+            for (int i = 0; i < numbersOfListPositionsToExclude; i++)
             {
-                var tempList = listOfInts.Take(listOfInts.Count - (iterator - 1 - i));
-                outputString += tempList.Min();
-                listOfInts.RemoveRange(0, listOfInts.IndexOf(tempList.Min()) + 1);
+                var tempListOfInts = listOfInts.Take(listOfInts.Count - (numbersOfListPositionsToExclude - 1 - i));
+
+                outputString += tempListOfInts.Min();
+                listOfInts.RemoveRange(0, listOfInts.IndexOf(tempListOfInts.Min()) + 1);
             }
 
             return outputString;
